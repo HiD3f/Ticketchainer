@@ -71,6 +71,11 @@ $gold : #FCD621;
         height: 16px; 
     }
 
+    &.l-icon{
+        width: 18px;
+        height: 18px;
+    }
+
     &.xxl-icon{
         height: 70px;
         width: 70px;
@@ -94,6 +99,15 @@ $gold : #FCD621;
     }
     &.icon-arrow-left{
         background-image: url('/assets/icons/arrow-left.svg');
+    }
+    &.icon-zoom-in{
+        background-image: url('/assets/icons/zoom-in.svg');
+    }
+    &.icon-zoom-out{
+        background-image: url('/assets/icons/zoom-out.svg');
+    }
+    &.icon-expand{
+        background-image: url('/assets/icons/expand.svg');
     }
 
     &.icon-football{
@@ -409,6 +423,7 @@ $gold : #FCD621;
     background: white;
 
     @include min-md(){
+        padding: 48px 32px;
         border-radius: 0;
     }
 
@@ -457,8 +472,9 @@ $gold : #FCD621;
         }
     }
 
-    .choice-bloc{
+    .choice-mode-bloc{
         text-align: center;
+        margin-bottom: 32px;
 
         .choice-btn{
             margin: 0 8px;
@@ -480,13 +496,61 @@ $gold : #FCD621;
     }
 
     .ticket-choice-bloc{
+        display: flex;
+        flex-direction: row;
 
         @include min-md() {
             background-color: $lighterblue;
             padding: 32px 40px;
             border-radius: 32px;
         }
+
+        .choice-form{
+            width: 100%;
+
+            @include min-md(){
+                width: 40%;
+            }
+        }
+
+        .stadium-display{
+            flex: 1;
+            text-align: center;
+            margin-bottom: 24px;
+
+            @include min-md(){
+                padding-left: 40px;
+            }
+            
+            img{
+                width: 100%;
+            }
+
+            &-controls{
+                .display-ctrl{
+                    margin: 4px;
+                }
+            }
+        }
         
+    }
+
+    .total {
+        display: inline-block;
+        margin: 12px 0;
+        padding: 16px 44px;
+        background: $lighterblue;
+        border-radius: 16px;
+        font-size: 20px;
+        @include bold-font();
+
+        &-label{
+            color: $lightblue;
+        }
+
+        &-value{
+            color: $darkblue;
+        }
     }
 }
 
@@ -543,7 +607,7 @@ $gold : #FCD621;
         }
 
         .input{
-            padding: 4px 0;
+            padding: 8px 0;
             border-bottom: 1px solid;
             border-color: $darkblue;
             color: $darkblue;
@@ -564,6 +628,32 @@ $gold : #FCD621;
 
     }
 
+    .dropdown-list{
+        padding: 16px 0;
+
+        .dropdown-list-item{
+            padding: 12px 4px;
+            border-bottom: 1px solid grey;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .list-item-label{
+                color: $darkblue;
+                @include regular-font();
+            }
+            .list-item-value {
+                background: $lightblue;
+                padding: 4px 16px;
+                border-radius: 20px;
+                color: white;
+            }
+        }
+        
+    }
+
     .input-text{
 
         .input {
@@ -573,7 +663,7 @@ $gold : #FCD621;
             border-right: none;
             outline: none;
             border-bottom: 1px solid;
-            padding: 4px 0;
+            padding: 8px 0;
             font-size: 15px;
             border-color: $darkblue;
             color: $darkblue;
