@@ -3,7 +3,9 @@
 $white : #FFFFFF;
 $rose : #F20066;
 $darkblue : #22217F;
+$darkestblue : #131342;
 $lightblue : #51BDFF;
+$lighterblue : #EFF8FE;
 $gold : #FCD621;
 
 /* LAYOUT MIXINS */
@@ -122,6 +124,105 @@ $gold : #FCD621;
     }
 }
 
+.cta-primary {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 22px 32px;
+    border-radius: 18px;
+    background-color: $lightblue;
+    color: $darkblue;
+}
+
+.club{
+    @include flex-center();
+    flex-direction: column;
+    padding: 0 16px;
+
+    .club-logo {
+        width: 65px;
+        height: 65px;
+        display: inline-block;
+
+        img{
+            height: 100%;
+        }
+    } 
+
+    .club-name{
+        font-size: 24px;
+        color: white;
+        text-align: center;
+        line-height: 24px;
+        padding: 12px 0;
+        text-transform: uppercase;
+
+        .first-line{
+            @include bold-font();
+        }
+
+        .second-line{
+            @include regular-font();
+        }
+    }
+}
+
+.step-bar{
+    @include flex-center();
+    flex-direction: row;
+    .step{
+        @include flex-center();
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 2px solid;
+        border-color: transparent;
+        margin: 8px;
+
+        &:not(.active){
+            .inner-circle{
+                width: 12px;
+                height: 12px;
+                display: inline-flex;
+                border-radius: 50%;
+                border: 2px solid;
+                border-color: $darkblue;
+            }
+        }
+        
+
+        &.active{
+            border-color: $lightblue;
+
+            .inner-circle{
+                width: 8px;
+                height: 8px;
+                display: inline-flex;
+                border-radius: 50%;
+                background-color: $darkblue;
+            }
+        }
+    }
+}
+
+.only-desktop{
+    @include max-md(){
+        display: none;
+    }
+}
+
+.only-mobile{
+    @include min-md(){
+        display: none;
+    }
+}
+
+.txt-center{
+    text-align: center;
+}
+
 /* 'COMPONENTS' */
 
 .banner {
@@ -197,8 +298,163 @@ $gold : #FCD621;
     height: 460px;
     background-size: cover;
     background-position: top center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include min-md(){
+        background-position: center;
+    }
+
+    .event-bloc{
+        background: linear-gradient(rgba(0,0,0,0.98), rgba(34,33,127,0.98));
+        border-top-left-radius: 32px;
+        border-top-right-radius: 32px;
+        padding: 32px 16px 48px;
+
+        .event-line-up{
+            @include flex-center();
+            flex-direction : row;
+
+            .away-club, .home-club{
+                display: flex;
+                flex-direction: row;
+                width: 40%;
+                @include min-md(){
+                    width: 20%;
+                }
+            }
+            .home-club{
+                justify-content: center;
+            }
+            .away-club{
+                justify-content: center;
+            }
+
+            .vs{
+                color: $gold;
+                font-size: 16px;
+                position: relative;
+                top: -32px;
+            }
+        }
+
+        .event-info{
+            text-align: center;
+            padding: 12px 0;
+
+            .first-line{
+                color: $gold;
+            }
+
+            .second-line{
+                color: white;
+            }
+        }
+
+    }
+
+
+
+}
+
+.shop-bloc {
+    padding: 32px 32px;
+    border-radius: 32px;
+    position: relative;
+    margin: -32px 0;
+    background: white;
+
+    .container{
+        width: 100%;
+        max-width: 912px;
+        margin: 0 auto;
+    }
+
+    .bloc-title{
+        width: 100%;
+        text-align: center;
+        color: $darkblue;
+        border-bottom: 2px solid $lightblue;
+    }
+
+    p{
+        font-size: 16px;
+        @include regular-font();
+        text-align: center;
+        color: $darkblue;
+
+        b {
+            white-space: nowrap;
+            @include bold-font();
+        }
+
+        @include min-md(){
+            background-color: $lighterblue;
+            padding: 32px;
+            border-radius: 32px;
+        }
+    }
+
+    .relative-container{
+        margin: 32px 0;
+    }
+
+    .absolute-container{
+        position: absolute;
+        bottom: -38px;
+        left: 0;
+        width: 100%;
+        padding: 0 32px;
+    }
+    
+    .cta-primary {
+        width: 100%;
+
+        @include min-md(){
+            max-width: 344px;
+        }
+    }
 }
 
 
+.footer{
+    background: $darkestblue;
+    @include flex-center();
+    flex-direction: column;
+    padding: 96px 16px 32px;
+    color: white;
+
+    a{
+        color: $lightblue;
+    }
+
+    .stripe-img{
+        width: 140px;
+
+        img{
+            width: 100%;
+        }
+    }
+
+    hr{
+        width: 32px;
+    }
+
+    .footer-bloc{
+        text-align: center;
+
+        @include max-md(){
+            &.help > div{
+                display: inline-block;
+                &:first-child{
+                    margin-right: 4px;
+                }
+            }
+        }
+    }
+
+
+}
 
 
