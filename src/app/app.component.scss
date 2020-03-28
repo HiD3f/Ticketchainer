@@ -1,0 +1,60 @@
+/* VARIABLES */
+
+$white : #FFFFFF;
+$rose : #F20066;
+$darkblue : #22217F;
+$lightblue : #51BDFF;
+
+/* LAYOUT MIXINS */
+@mixin c-l-pad {
+    padding: 0 16px;
+}
+
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MEDIA MIXINS */
+
+/* GENERIC ITEMS */
+
+.svgicon{
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &.smallicon{
+        width: 14px;
+        height: 14px;
+    }
+
+    &.svg-gift{
+        background-image: url('/assets/icons/gift.svg');
+    }
+
+}
+
+
+/* 'COMPONENTS' */
+
+.banner {
+    @include c-l-pad();
+    height: 36px;
+    @include flex-center();
+    background: $rose;
+    color: $white;
+
+    &-message{
+        .message-icon{
+            margin-right: 8px;
+            float: left;
+        }
+    }
+}
+
+
+
+
