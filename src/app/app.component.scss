@@ -4,6 +4,7 @@ $white : #FFFFFF;
 $rose : #F20066;
 $darkblue : #22217F;
 $lightblue : #51BDFF;
+$gold : #FCD621;
 
 /* LAYOUT MIXINS */
 @mixin c-l-pad {
@@ -16,7 +17,39 @@ $lightblue : #51BDFF;
     justify-content: center;
 }
 
+@mixin flex-spacing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 /* MEDIA MIXINS */
+
+@mixin min-md {
+    @media screen and (min-width: 769px) {
+        @content;
+    }
+}
+@mixin max-md {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+/* TYPO MIXINS */
+
+@mixin light-font{
+    font-weight: 300;
+}
+@mixin regular-font{
+    font-weight: 400;
+}
+@mixin medium-font{
+    font-weight: 500;
+}
+@mixin bold-font{
+    font-weight: 700;
+}
 
 /* GENERIC ITEMS */
 
@@ -26,17 +59,68 @@ $lightblue : #51BDFF;
     background-position: center;
     background-repeat: no-repeat;
 
-    &.smallicon{
+    &.s-icon{
         width: 14px;
         height: 14px;
     }
 
-    &.svg-gift{
+    &.m-icon{
+        width: 16px;
+        height: 16px; 
+    }
+
+    &.xxl-icon{
+        height: 70px;
+        width: 70px;
+    }
+
+    /* ICON LIST */
+    &.icon-gift{
         background-image: url('/assets/icons/gift.svg');
+    }
+    &.icon-menu{
+        background-image: url('/assets/icons/menu.svg');
+    }
+    &.icon-search{
+        background-image: url('/assets/icons/magnifying-glass.svg');
+    }
+    &.icon-user{
+        background-image: url('/assets/icons/user.svg');
+    }
+    &.icon-basket{
+        background-image: url('/assets/icons/shopping-bag.svg');
+    }
+
+    &.icon-football{
+        background-image: url('/assets/icons/football.svg');
     }
 
 }
 
+.btn{
+    display: inline-flex;
+    cursor: pointer;
+    padding: 8px;
+    position: relative;
+
+    .btn-icon{
+        float: left;
+    }
+    .btn-label{
+        margin-left: 16px;
+        font-size: 15px;
+        line-height: 15px;
+        color: white;
+    }
+    .btn-minilabel{
+        position: absolute;
+        right: 3px;
+        top: 3px;
+        font-size: 10px;
+        @include bold-font();
+        color: $gold;
+    }
+}
 
 /* 'COMPONENTS' */
 
@@ -47,12 +131,72 @@ $lightblue : #51BDFF;
     background: $rose;
     color: $white;
 
+    @include min-md(){
+        height: 46px;
+    }
+
     &-message{
         .message-icon{
-            margin-right: 8px;
+            margin-right: 12px;
             float: left;
         }
+        .message-label{
+            @include medium-font()
+        }
     }
+}
+
+.toolbar {
+    background: $darkblue;
+    height: 86px;
+    @include flex-center();
+    @include c-l-pad();
+
+    @include min-md{
+        height: 112px;
+    }
+
+    &-container{
+        width: 100%;
+        max-width: 1634px;
+
+        @include flex-spacing();
+    }
+
+    .toolbar-bloc {
+        display: inline-flex;
+        width: calc(100% / 3);
+
+        &-left{
+            justify-content: flex-start;
+        }
+        &-middle{
+            justify-content: center;
+        }
+        &-right{
+            justify-content: flex-end;
+        }
+    }
+
+    .menu-btn {
+        margin-right: 24px;
+        
+        @include max-md(){
+            margin-right: 16px;
+
+            .btn-label{
+                margin-left: 0;
+                display: none;
+            }
+        }
+
+    }
+}
+
+.hero {
+    height: 460px;
+    background-size: cover;
+    background-position: top center;
 }
 
 
