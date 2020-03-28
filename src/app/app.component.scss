@@ -6,6 +6,7 @@ $darkblue : #22217F;
 $darkestblue : #131342;
 $lightblue : #51BDFF;
 $lighterblue : #EFF8FE;
+$lightgrey : rgb(177, 177, 177);
 $gold : #FCD621;
 
 /* LAYOUT MIXINS */
@@ -240,10 +241,97 @@ $gold : #FCD621;
     text-align: center;
 }
 
+.nowrap{
+    white-space: nowrap;
+}
+
 .medium-container{
     width: 100%;
     max-width: 912px;
     margin: 0 auto;
+}
+
+.form-input-group {
+    margin: 0 0 16px 0;
+
+    .input-select{
+
+        &.expanded{
+            .input .dropdown-icon {
+                transform: rotate(90deg);
+            }
+        }
+
+        .input{
+            padding: 8px 0;
+            border-bottom: 1px solid;
+            border-color: $darkblue;
+            color: $darkblue;
+            cursor: pointer;
+
+            .label{
+                font-size: 15px;
+            }
+
+            .dropdown-icon {
+                float: right;
+                transform: rotate(-90deg);
+                font-size: 20px;
+                @include bold-font();
+                transition: all .3s ease-in;
+            }
+        }
+
+    }
+
+    .dropdown-list{
+        padding: 16px 0;
+
+        .dropdown-list-item{
+            padding: 12px 4px;
+            border-bottom: 1px solid $lightgrey;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .list-item-label{
+                color: $darkblue;
+                @include regular-font();
+            }
+            .list-item-value {
+                background: $lightblue;
+                padding: 4px 16px;
+                border-radius: 20px;
+                color: white;
+            }
+        }
+        
+    }
+
+    .input-text{
+
+        .input {
+            background: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            border-bottom: 1px solid;
+            padding: 8px 0;
+            font-size: 15px;
+            border-color: $darkblue;
+            color: $darkblue;
+            width: 100%;
+
+            &::placeholder{
+                color: $darkblue;
+            }
+        }
+
+    }
+
 }
 
 /* 'COMPONENTS' */
@@ -431,7 +519,8 @@ $gold : #FCD621;
         width: 100%;
         text-align: center;
         color: $darkblue;
-        border-bottom: 2px solid $lightblue;
+        border-bottom: 1px solid $lightblue;
+        margin-bottom: 32px;
     }
 
     p{
@@ -441,7 +530,6 @@ $gold : #FCD621;
         color: $darkblue;
 
         b {
-            white-space: nowrap;
             @include bold-font();
         }
 
@@ -488,8 +576,8 @@ $gold : #FCD621;
             }
             &:not(.active){
                 .choice-btn-label{
-                    color: grey;
-                    border-color: grey;
+                    color: $lightgrey;
+                    border-color: $lightgrey;
                 }
             }
         }
@@ -538,7 +626,7 @@ $gold : #FCD621;
     .total {
         display: inline-block;
         margin: 12px 0;
-        padding: 16px 44px;
+        padding: 20px 48px;
         background: $lighterblue;
         border-radius: 16px;
         font-size: 20px;
@@ -550,6 +638,105 @@ $gold : #FCD621;
 
         &-value{
             color: $darkblue;
+        }
+    }
+
+    .upsell-bloc{
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 32px 0 0;
+
+        @include min-md(){
+            flex-direction: row;
+        }
+
+        .upsell-btn{
+            padding: 16px 32px;
+            border: 1px solid;
+            border-color: $lightblue;
+            border-radius: 16px;
+            @include flex-center();
+
+            @include max-md(){
+                width: 100%;
+                margin: 16px 0;
+            }
+
+            .btn-icon{
+                color: $darkblue;
+                @include bold-font();
+                font-style: normal;
+                font-size: 20px;
+                line-height: 14px;
+                position: relative;
+                top: -1px;
+            }
+
+            .btn-label{
+                color: $lightblue;
+                font-size: 16px;
+                line-height: 16px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .recap-bloc{
+        @include min-md(){
+            background-color: $lighterblue;
+            padding: 32px;
+            border-radius: 32px;
+            margin-bottom: 32px;
+        }
+        
+        p{
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .recap-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @include min-md(){
+                flex-direction: row;
+            }
+
+            .detail-item{
+                // width: calc(100% / 3);
+                font-size: 15px;
+                border-bottom: 1px solid;
+                border-bottom-color: $lightgrey;
+                padding: 12px 0;
+                margin-bottom: 4px;
+                
+                @include min-md(){
+                    text-align: center;
+                    margin: 0 16px;
+
+                    &:first-child{
+                        text-align: left;
+                    }
+    
+                    &:last-child{
+                        text-align: right;
+                    }
+                }
+                
+                .detail-label{
+                    @include bold-font();
+                    color: $darkblue;
+                }
+
+                .detail-value{
+                    color: $lightblue;
+                }
+            }
         }
     }
 }
@@ -595,85 +782,3 @@ $gold : #FCD621;
 }
 
 
-.form-input-group {
-    margin: 0 0 16px 0;
-
-    .input-select{
-
-        &.expanded{
-            .input .dropdown-icon {
-                transform: rotate(90deg);
-            }
-        }
-
-        .input{
-            padding: 8px 0;
-            border-bottom: 1px solid;
-            border-color: $darkblue;
-            color: $darkblue;
-            cursor: pointer;
-
-            .label{
-                font-size: 15px;
-            }
-
-            .dropdown-icon {
-                float: right;
-                transform: rotate(-90deg);
-                font-size: 20px;
-                @include bold-font();
-                transition: all .3s ease-in;
-            }
-        }
-
-    }
-
-    .dropdown-list{
-        padding: 16px 0;
-
-        .dropdown-list-item{
-            padding: 12px 4px;
-            border-bottom: 1px solid grey;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-
-            .list-item-label{
-                color: $darkblue;
-                @include regular-font();
-            }
-            .list-item-value {
-                background: $lightblue;
-                padding: 4px 16px;
-                border-radius: 20px;
-                color: white;
-            }
-        }
-        
-    }
-
-    .input-text{
-
-        .input {
-            background: none;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            outline: none;
-            border-bottom: 1px solid;
-            padding: 8px 0;
-            font-size: 15px;
-            border-color: $darkblue;
-            color: $darkblue;
-            width: 100%;
-
-            &::placeholder{
-                color: $darkblue;
-            }
-        }
-
-    }
-
-}
