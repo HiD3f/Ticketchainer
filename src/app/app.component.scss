@@ -279,26 +279,30 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.98), rgba(0,0,0,0.98));
 
 .only-desktop{
     @include max-md(){
-        display: none;
+        display: none !important;
     }
 }
 
 .only-mobile{
     @include min-md(){
-        display: none;
+        display: none !important;
     }
 }
 
 .txt-center{
-    text-align: center;
+    text-align: center !important;
 }
 
 .txt-right{
-    text-align: right;
+    text-align: right !important;
+}
+
+.txt-left{
+    text-align: left !important;
 }
 
 .nowrap{
-    white-space: nowrap;
+    white-space: nowrap !important;
 }
 
 .medium-container{
@@ -622,6 +626,14 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.98), rgba(0,0,0,0.98));
             background-color: $lighterblue;
             padding: 32px;
             border-radius: 32px;
+        }
+    }
+
+    .stadium-3D-bloc{
+        width: 100%;
+
+        img{
+            width: 100%;
         }
     }
 
@@ -1071,13 +1083,16 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.98), rgba(0,0,0,0.98));
     padding: 96px 16px 32px;
     color: white;
 
+    @include min-md(){
+        flex-direction: row;
+    }
+
     a{
         color: $lightblue;
     }
 
     .stripe-img{
         width: 140px;
-
         img{
             width: 100%;
         }
@@ -1088,15 +1103,22 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.98), rgba(0,0,0,0.98));
     }
 
     .footer-bloc{
-        text-align: center;
+        &-left.only-desktop {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
 
-        @include max-md(){
-            &.help > div{
+            > div{
                 display: inline-block;
+                
                 &:first-child{
-                    margin-right: 4px;
+                    margin-right: 16px;
                 }
             }
+        }
+
+        > div, img{
+            margin: 4px 0;
         }
     }
 
