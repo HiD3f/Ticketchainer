@@ -589,6 +589,10 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
             z-index: 2;
             text-align: center;
 
+            @include max-md(){
+                top: -40px;
+            }
+
             img{
                 height: 100%;
             }
