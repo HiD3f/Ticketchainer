@@ -1,29 +1,3 @@
-/* RESET */
-
-*{
-    box-sizing: border-box;
-}
-
-body {
-    padding: 0;
-    margin: 0;
-    font-size: 12px;
-    font-family: 'Roboto', sans-serif;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-}
-
-button{
-    border: none;
-    outline: none;
-    background: none;
-    cursor: pointer;
-}
-
 /* VARIABLES */
 
 $white : #FFFFFF;
@@ -35,8 +9,8 @@ $lighterblue : #EFF8FE;
 $lightgrey : rgb(177, 177, 177);
 $gold : #FCD621;
 
-$gradient : linear-gradient(rgba(0,0,0,0.98), rgba(34,33,127,0.98));
-$gradient2 : linear-gradient(rgba(34,33,127,0.98), rgba(0,0,0,0.98));
+$gradient : linear-gradient(rgba(0,0,0,0.9), rgba(34,33,127,0.9));
+$gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
 
 /* LAYOUT MIXINS */
 @mixin c-l-pad {
@@ -248,11 +222,11 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.98), rgba(0,0,0,0.98));
     } 
 
     .club-name{
-        font-size: 24px;
+        font-size: 20px;
         color: white;
         text-align: center;
-        line-height: 24px;
-        padding: 12px 0;
+        line-height: 20px;
+        padding: 8px 0;
         text-transform: uppercase;
 
         .first-line{
@@ -515,7 +489,7 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.98), rgba(0,0,0,0.98));
         background: $gradient;
         border-top-left-radius: 32px;
         border-top-right-radius: 32px;
-        padding: 32px 16px 88px;
+        padding: 24px 16px 88px;
         position: relative;
 
         @include min-md(){
@@ -600,7 +574,6 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.98), rgba(0,0,0,0.98));
             }
             &-middle{
                 justify-content: center;
-                background: red;
                 position: relative;
             }
             &-right{
@@ -610,11 +583,15 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.98), rgba(0,0,0,0.98));
 
         .navbar-illustration {
             position: absolute;
-            top: -50px;
-            height: 86px;
+            top: -30px;
+            height: 80px;
             width: 100%;
             z-index: 2;
             text-align: center;
+
+            @include max-md(){
+                top: -40px;
+            }
 
             img{
                 height: 100%;
@@ -1181,4 +1158,3 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.98), rgba(0,0,0,0.98));
 
 
 }
-
