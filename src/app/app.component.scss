@@ -566,7 +566,7 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.98), rgba(0,0,0,0.98));
             width: calc(100% / 3);
 
             @include max-md(){
-                width: calc(100%/2);
+                width: 40%;
             }
     
             &-left{
@@ -574,22 +574,53 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.98), rgba(0,0,0,0.98));
             }
             &-middle{
                 justify-content: center;
-                @include max-md(){
-                    display: none;
-                }
+                background: red;
+                position: relative;
             }
             &-right{
                 justify-content: flex-end;
             }
         }
 
+        .navbar-illustration {
+            position: absolute;
+            top: -50px;
+            height: 86px;
+            width: 100%;
+            z-index: 2;
+            text-align: center;
+
+            img{
+                height: 100%;
+            }
+        }
+
+        .btn{
+            padding: 8px 0;
+        }
+
         .basket-btn{
             .btn-label{
                 color: $gold;
+                margin: 0;
             }
         }
     }
 
+    &.simple-hero{
+        height: 202px;
+
+        @include min-md(){
+            height: 248px;
+        }
+        
+        .event-bloc{
+            background: linear-gradient(180deg, rgba(34, 33, 127, 0.83) 0%, rgba(17, 17, 64, 0.8) 100%) 0% 0%;
+            height: 100%;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    }
 }
 
 .shop-bloc {
