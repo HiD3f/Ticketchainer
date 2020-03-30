@@ -1111,12 +1111,15 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
 
 .shop{
     margin: 32px 0;
-    padding: 0 16px;
 
+    @include min-md(){
+        padding: 0 16px;
+    }
+    
     .shop-aisle{
         color: $darkblue;
         margin-bottom: 16px;
-        
+
         .aisle-title{
             font-size: 16px;
             color: $darkblue;
@@ -1135,6 +1138,10 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
                 border-bottom: 1px solid $lightgrey;
                 font-size: 14px;
 
+                &-label{
+                    @include medium-font();
+                }
+
                 .unit-price{
                     display: inline-flex;
                     margin-right: 12px;
@@ -1151,11 +1158,12 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
 
                     .form-input-group{
                         margin: 0;
-                        width: 40px;
+                        width: 32px;
 
                         .input{
                             padding: 0;
                             text-align: center;
+                            @include medium-font();
                         }
 
                         input[type=number]::-webkit-inner-spin-button,
