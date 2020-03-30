@@ -327,6 +327,14 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
     text-align: left !important;
 }
 
+.no-margin{
+    margin: 0!important;
+}
+
+.no-padding{
+    padding: 0!important;
+}
+
 .nowrap{
     white-space: nowrap !important;
 }
@@ -866,7 +874,6 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
             }
 
             .detail-item{
-                // width: calc(100% / 3);
                 font-size: 15px;
                 border-bottom: 1px solid;
                 border-bottom-color: $lightgrey;
@@ -874,16 +881,9 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
                 margin-bottom: 4px;
                 
                 @include min-md(){
-                    text-align: center;
+                    width: calc(100% / 3);
+                    text-align: left;
                     margin: 0 16px;
-
-                    &:first-child{
-                        text-align: left;
-                    }
-    
-                    &:last-child{
-                        text-align: right;
-                    }
                 }
                 
                 .detail-label{
@@ -1135,6 +1135,78 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
     }
 }
 
+.shop{
+    margin: 32px 0;
+
+    @include min-md(){
+        padding: 0 16px;
+    }
+    
+    .shop-aisle{
+        color: $darkblue;
+        margin-bottom: 16px;
+
+        .aisle-title{
+            font-size: 16px;
+            color: $darkblue;
+            border-bottom: 1px solid $darkblue;
+            padding: 8px 0;
+            @include bold-font();
+        }
+        .aisle-content{
+            padding: 8px 0;
+
+            .aisle-item{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 12px 0;
+                border-bottom: 1px solid $lightgrey;
+                font-size: 14px;
+
+                &-label{
+                    @include medium-font();
+                }
+
+                .unit-price{
+                    display: inline-flex;
+                    margin-right: 12px;
+                    text-align: right;
+                }
+                .quantity{
+                    display: inline-flex;
+
+                    button {
+                        font-size: 16px;
+                        font-weight: 700;
+                        margin: 0 4px;
+                    }
+
+                    .form-input-group{
+                        margin: 0;
+                        width: 32px;
+
+                        .input{
+                            padding: 0;
+                            text-align: center;
+                            @include medium-font();
+                        }
+
+                        input[type=number]::-webkit-inner-spin-button,
+                        input[type=number]::-webkit-outer-spin-button{
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+                        input[type=number]{
+                            -moz-appearance: textfield;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 .footer{
     background: $darkestblue;
@@ -1184,3 +1256,5 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
 
 
 }
+
+
