@@ -323,6 +323,7 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
     margin: 0 0 16px 0;
 
     .input-select{
+        position: relative;
 
         &.expanded{
             .input .dropdown-icon {
@@ -336,17 +337,45 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
             border-color: $darkblue;
             color: $darkblue;
             cursor: pointer;
+            width: 100%;
+            height: 35px;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            -webkit-appearance: none;
+            border-radius: 0;
+            background: transparent;
+            font-size: 16px;
+            outline: none;
 
             .label{
                 font-size: 15px;
             }
+        }
 
-            .dropdown-icon {
-                float: right;
-                transform: rotate(-90deg);
-                font-size: 20px;
-                @include bold-font();
-                transition: all .3s ease-in;
+        .dropdown-icon {
+            position: absolute;
+            right: 0;
+            top: 8px;
+            transition: all .3s ease-in;
+            width: 12px;
+            height: 12px;
+            transform: rotate(-45deg);
+
+            .out, .in{
+                display: inline-block;
+                width: 12px;
+                height: 3px;
+                background: $darkblue;
+                position: relative;
+                border-radius: 3px;
+            }
+
+            .in{
+                transform: rotate(90deg);
+                position: absolute;
+                left: -5px;
+                bottom: 5px;
             }
         }
 
@@ -396,6 +425,10 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
 
             &::placeholder{
                 color: $darkblue;
+            }
+
+            &[type=date]{
+                font-size: 12px;
             }
         }
 
@@ -900,7 +933,7 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
                     justify-content: space-around;
 
                     .form-input-group{
-                        width: calc(100% / 3);
+                        width: calc(100% / 3 - 20px);
                     }
                 }
             }
