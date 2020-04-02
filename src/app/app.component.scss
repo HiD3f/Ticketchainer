@@ -502,7 +502,7 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
         margin-right: 24px;
         
         @include max-md(){
-            margin-right: 16px;
+            margin-right: 12px;
 
             .btn-label{
                 margin-left: 0;
@@ -510,6 +510,10 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
             }
         }
 
+    }
+
+    .basket-btn{
+        margin-left: 12px;
     }
 }
 
