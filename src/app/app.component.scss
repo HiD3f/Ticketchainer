@@ -525,10 +525,11 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
             }
 
             .vs{
-                color: $gold;
-                font-size: 16px;
+                color: #ffffff;
+                font-size: 44px;
                 position: relative;
-                top: -32px;
+                top: 0px;
+                font-weight: 100;
             }
         }
 
