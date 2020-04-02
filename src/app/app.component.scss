@@ -322,6 +322,14 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
 .form-input-group {
     margin: 0 0 16px 0;
 
+    &.half {
+        width: calc(50% - 10px);
+        display: inline-block;
+        
+       &:not(:last-child){
+           margin-right: 20px;
+       } 
+    }
     .input-select{
         position: relative;
 
