@@ -330,6 +330,21 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
            margin-right: 20px;
        } 
     }
+
+    &.half-mobile {
+
+        @include max-md(){
+            width: calc(50% - 10px);
+            display: inline-block;
+            
+           &:not(:last-child){
+               margin-right: 20px;
+           }
+        }
+         
+    }
+
+
     .input-select{
         position: relative;
 
@@ -448,6 +463,19 @@ $gradient2 : linear-gradient(rgba(34,33,127,0.9), rgba(0,0,0,0.9));
 
     }
 
+}
+
+.cat-1{
+    background: #22217F!important;
+}
+.cat-2{
+    background: #F20066!important;
+}
+.cat-3{
+    background: #53B6F2!important;
+}
+.cat-4{
+    background: #101042!important;
 }
 
 /* 'COMPONENTS' */

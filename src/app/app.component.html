@@ -48,7 +48,9 @@
 
 <div class="content" role="main">
 
-  <div class="hero" style="background-image: url('/assets/images/fancy-crave.png'); background-position: bottom;">
+  <!-- les utiliser le deuxieme header alternatif commenté ci dessous lors ce que nécessaire -->
+
+  <div class="hero" style="background-image: url('/assets/images/LIGUE2.png'); background-position: bottom;">
 
     <div class="event-bloc">
       <div class="event-line-up">
@@ -86,6 +88,43 @@
         <div class="second-line">à 20h00 au Stade Charlety</div>
       </div>
 
+      <div class="navbar two-options">
+        
+        <div class="medium-container">
+
+          <div class="navbar-bloc navbar-bloc-left">
+            <a href="" class="btn return-btn">
+              <i class="btn-icon svgicon icon-arrow-left m-icon"></i>
+              <div class="btn-label">Retour</div>
+            </a>
+          </div>
+
+          <div class="navbar-bloc navbar-bloc-middle">
+            <div class="navbar-illustration">
+              <img class="only-desktop" src="/assets//illustrations/desktop/stadium-perso.svg" alt="">
+            </div>
+          </div>
+
+          <div class="navbar-bloc navbar-bloc-right">
+            <div class="btn basket-btn">
+              <div class="btn-label">
+                > Authentification
+              </div>
+            </div>
+          </div>
+
+        </div>
+      
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- <div class="hero simple-hero" style="background-image: url('/assets/images/fancy-crave.png'); background-position: center;">
+
+    <div class="event-bloc">
+
       <div class="navbar">
         
         <div class="medium-container">
@@ -99,7 +138,7 @@
 
           <div class="navbar-bloc navbar-bloc-middle">
             <div class="navbar-illustration">
-              <img class="only-desktop" src="/assets/illustrations/desktop/match-perso.svg" alt="">
+              <img class="only-desktop" src="/assets/illustrations/desktop/panier-perso.svg" alt="">
             </div>
           </div>
 
@@ -117,141 +156,252 @@
 
     </div>
 
-  </div>
+  </div> -->
 
   <div class="shop-bloc">
     
-    <div class="medium-container">
+    <!-- Chaque étape de l'inscription est commentée dans ce document -->
+
+   <!-- <div class="medium-container">
 
       <div class="choice-mode-bloc">
-        <button class="choice-btn express-choice active">
+        <button class="choice-btn express-choice">
           <span class="choice-btn-label">
-            Choix Express
+            Membre
           </span>
         </button>
-        <button class="choice-btn place-choice only-desktop">
+        <button class="choice-btn place-choice active">
           <span class="choice-btn-label">
-            Par place
+            Nouveau Client
           </span>
         </button>
       </div>
 
-      <div class="ticket-choice-bloc">
+      <div class="identification-bloc">
 
-        <form class="choice-form" action="">
-
-          <div class="form-input-group">
-            <div class="input-select">
-              <div class="input">
-                <span class="label">Choix par catégorie</span>
+        <form action="">
+          <div class="container">
+            <div class="form-input-group">
+              <div class="input-select">
+                <select name=""  class="input" id="">
+                  <option value="" selected disabled>Civilité</option>
+                  <option value="">Mr</option>
+                  <option value="">Mme</option>
+                </select>
                 <span class="dropdown-icon"> <span class="out"><span class="in"></span></span> </span>
               </div>
             </div>
-
-            <div class="dropdown-list">
-
-              <div class="dropdown-list-item">
-                <span class="list-item-label"> Catégorie 1</span>
-                <span class="list-item-value"> A partir de 10€</span>
-              </div>
-              <div class="dropdown-list-item">
-                <span class="list-item-label"> Catégorie 2</span>
-                <span class="list-item-value"> A partir de 25€</span>
-              </div>
-              <div class="dropdown-list-item">
-                <span class="list-item-label"> Catégorie 3</span>
-                <span class="list-item-value"> A partir de 55€</span>
-              </div>
-              <div class="dropdown-list-item">
-                <span class="list-item-label"> Catégorie 4</span>
-                <span class="list-item-value"> A partir de 70€</span>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="stadium-display only-mobile">
-            <img src="/assets/images/stade-template-places.svg" alt="">
-            <div class="stadium-display-controls">
-              <button class="display-ctrl ctrl-zoom-in btn">
-                <i class="btn-icon svgicon icon-zoom-in l-icon"></i>
-              </button>
-              <button class="display-ctrl ctrl-expand btn">
-                <i class="btn-icon svgicon icon-expand l-icon"></i>
-              </button>
-              <button class="display-ctrl ctrl-zoom-out btn">
-                <i class="btn-icon svgicon icon-zoom-out l-icon"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="form-input-group">
-            <div class="input-select">
-              <div class="input">
-                <span class="label">Choix du tarif</span>
-                <span class="dropdown-icon"> <span class="out"><span class="in"></span></span> </span>
+    
+            <div class="form-input-group">
+              <div class="input-text">
+                <input class="input" type="text" placeholder="Nom et Prénom">
               </div>
             </div>
+            
           </div>
-
-          <div class="form-input-group">
-            <div class="input-select">
-              <div class="input">
-                <span class="label">Choix du nombre de places</span>
-                <span class="dropdown-icon"> <span class="out"><span class="in"></span></span> </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-input-group half">
-            <div class="input-text">
-              <input class="input" type="text" placeholder="Nom">
-            </div>
-          </div>
-
-          <div class="form-input-group half">
-            <div class="input-text">
-              <input class="input" type="text" placeholder="Prénom">
-            </div>
-          </div>
-
+          
         </form>
 
-        <div class="stadium-display only-desktop">
-          <img src="/assets/images/stade-template-places.svg" alt="">
-          <div class="stadium-display-controls">
-            <button class="display-ctrl ctrl-zoom-in btn">
-              <i class="btn-icon svgicon icon-zoom-in l-icon"></i>
-            </button>
-            <button class="display-ctrl ctrl-expand btn">
-              <i class="btn-icon svgicon icon-expand l-icon"></i>
-            </button>
-            <button class="display-ctrl ctrl-zoom-out btn">
-              <i class="btn-icon svgicon icon-zoom-out l-icon"></i>
-            </button>
+      </div>
+
+      <div class="relative-container txt-center only-desktop">
+        <button class="cta-primary">Je <b>m'inscris</b></button>
+      </div>
+      
+      <div class="absolute-container only-mobile">
+        <button class="cta-primary">Je <b>m'inscris</b></button>
+      </div>
+
+      <div class="step-bar">
+        <div class="step active"><div class="inner-circle"></div></div>
+        <div class="step"><div class="inner-circle"></div></div>
+        <div class="step"><div class="inner-circle"></div></div>
+      </div>
+
+    </div> -->
+
+    <!-- <div class="medium-container">
+
+      <div class="choice-mode-bloc">
+        <button class="choice-btn express-choice">
+          <span class="choice-btn-label">
+            Membre
+          </span>
+        </button>
+        <button class="choice-btn place-choice active">
+          <span class="choice-btn-label">
+            Nouveau Client
+          </span>
+        </button>
+      </div>
+
+      <div class="identification-bloc">
+
+        <form action="">
+          <div class="container">
+            <div class="form-input-group">
+              <div class="input-text">
+                <input type="text" class="input" placeholder="Votre email">
+              </div>
+            </div>
+    
+            <div class="form-input-group">
+              <div class="input-text">
+                <input class="input" type="text" placeholder="Mot de passe">
+                <i class="svgicon icon-view s-icon"></i>
+              </div>
+            </div>
+            
           </div>
-        </div>
+          
+        </form>
+
+      </div>
+
+      <div class="relative-container txt-center only-desktop">
+        <button class="cta-primary">Encore un <b>petit clic</b></button>
+      </div>
+      
+      <div class="absolute-container only-mobile">
+        <button class="cta-primary">Encore un <b>petit clic</b></button>
+      </div>
+
+      <div class="step-bar">
+        <div class="step "><div class="inner-circle"></div></div>
+        <div class="step active"><div class="inner-circle"></div></div>
+        <div class="step"><div class="inner-circle"></div></div>
+      </div>
+
+    </div> -->
+
+    <div class="medium-container">
+
+      <div class="choice-mode-bloc">
+        <button class="choice-btn express-choice">
+          <span class="choice-btn-label">
+            Membre
+          </span>
+        </button>
+        <button class="choice-btn place-choice active">
+          <span class="choice-btn-label">
+            Nouveau Client
+          </span>
+        </button>
+      </div>
+
+      <div class="identification-bloc">
+
+        <form action="">
+          <div class="container">
+            <div class="form-input-group">
+              <div class="input-text">
+                <input type="text" class="input" placeholder="Votre email">
+              </div>
+            </div>
+    
+            <div class="form-input-group half-mobile">
+              <div class="input-text">
+                <input class="input" type="text" placeholder="Date de naissance">
+                <i class="svgicon icon-calendar s-icon"></i>
+              </div>
+            </div>
+
+            <div class="form-input-group half-mobile">
+              <div class="input-text">
+                <input class="input" type="number" placeholder="Téléphone">
+              </div>
+            </div>
+            
+          </div>
+          
+        </form>
+
+      </div>
+
+      <div class="relative-container txt-center only-desktop">
+        <button class="cta-primary">ça y est <b>c'est fini</b></button>
+      </div>
+      
+      <div class="absolute-container only-mobile">
+        <button class="cta-primary">ça y est <b>c'est fini</b></button>
+      </div>
+
+      <div class="step-bar">
+        <div class="step "><div class="inner-circle"></div></div>
+        <div class="step "><div class="inner-circle"></div></div>
+        <div class="step active"><div class="inner-circle"></div></div>
+      </div>
+
+    </div>
+    
+     <!-- <div class="medium-container">
+
+      <div class="bloc-title">
+        <h2>Merci</h2>
+      </div>
+
+      <div class="identification-bloc">
+
+        <p>Un email de confirmation a été envoyé à <b>adresse@mail.com</b>. <br>
+          Si vous ne le recevez pas, veuillez vérifier vos spams.
+        </p>
+
+      </div>
+
+      <div class="relative-container txt-center only-desktop">
+        <button class="cta-primary">Je vérifie <b>mon mail</b></button>
+      </div>
+      
+      <div class="absolute-container only-mobile">
+        <button class="cta-primary">Je vérifie <b>mon mail</b></button>
+      </div>
+
+    </div> -->
+
+    <!-- <div class="medium-container">
+
+      <div class="bloc-title">
+        <h2>YES</h2>
+      </div>
+
+      <div class="identification-bloc">
+
+        <p><b>Félicitations Patrick</b> <br>
+          Vous faites partie de la communauté de Ticketchainer. Une dernière étape.
+        </p>
+
+      </div>
+
+      <div class="relative-container txt-center only-desktop">
+        <button class="cta-primary">J'active <b>mon compte</b></button>
+      </div>
+      
+      <div class="absolute-container only-mobile">
+        <button class="cta-primary">J'active <b>mon compte</b></button>
+      </div>
+
+    </div> -->
+
+    <!-- <div class="medium-container">
+
+      <div class="bloc-title">
+        <h2>Welcome dans la communauté !</h2>
+      </div>
+
+      <div class="identification-bloc">
+
+        <p><b>Done !</b> <br>
+        Nous sommes honorés de vous accueillir parmis nous
+        </p>
 
       </div>
 
       <div class="relative-container txt-center">
-        <span class="total">
-          <span class="total-label">TOTAL : </span>
-          <span class="total-value">25.00 €</span>
-        </span>
+        <i class="btn-icon svgicon icon-fame xxl-icon"></i>
       </div>
 
-      <div class="relative-container txt-center only-desktop">
-        <button class="cta-primary">J'ajoute à <b>mon panier</b></button>
-      </div>
-      
-      <div class="absolute-container only-mobile">
-        <button class="cta-primary">J'ajoute à <b>mon panier</b></button>
-      </div>
-
-    </div>
-
+    </div> -->
+    
   </div>
 
 </div>
